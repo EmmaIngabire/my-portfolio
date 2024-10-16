@@ -10,7 +10,7 @@ currentLink?.classList.add("current");
 
 // Define your pages
 const pages = [
-    { url: ".", title: "Home" }, // Changed URL for homepage to "." 
+    { url: "./", title: "Home" }, // Changed URL for homepage to "." 
     { url: "Projects", title: "Projects" }, // Ensure there are no trailing slashes
     { url: "Contact", title: "Contact" },
     { url: "cv", title: "Resume" },

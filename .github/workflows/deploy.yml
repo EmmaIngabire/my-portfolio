@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Change if your default branch is different
+    branches: ["main"]
 
 jobs:
   build_site:
@@ -14,7 +14,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # Change if needed
+          node-version: 20
           cache: npm
 
       - name: Install dependencies
@@ -22,14 +22,14 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: "/${{ github.event.repository.name }}"  # Adjust if necessary
+          BASE_PATH: "/${{ github.event.repository.name }}"  # Set the base path for GitHub Pages
         run: |
-          npm run build  # Ensure this command is correct
+          npm run build  # Ensure your build outputs to the correct folder
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "build/"  # Change if your output directory is different
+          path: ".svelte-kit/output/client"  # Update this to your actual build output path
 
   deploy:
     needs: build_site

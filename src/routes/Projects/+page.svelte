@@ -5,7 +5,7 @@
 <svelte:head>
     <title>Projects</title>
 </svelte:head>
-
+<h1>Total Projects: {projects.length}</h1>
 <div class="projects">
     {#each projects as p}
         <article>

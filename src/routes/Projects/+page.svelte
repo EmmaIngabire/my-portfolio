@@ -1,6 +1,7 @@
 <script>
     import projects from '$lib/projects.json';
 </script>
+
 <pre>{ JSON.stringify(projects, null, "\t") }</pre>
 
 <svelte:head>

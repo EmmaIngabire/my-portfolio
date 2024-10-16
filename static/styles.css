@@ -1,0 +1,251 @@
+:root {
+  --color-accent: oklch(65% 50% 0);
+  --color-text: #333;
+  --color-hover: #666;
+  --color-background: #ffffff;
+  --nav-background: #f4f4f4;
+  --nav-border: #ddd;
+}
+
+html, body {
+  accent-color: var(--color-accent);
+}
+
+body {
+  max-width: 100ch;
+  margin: auto;
+  padding: 0 1em;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+#my_face {
+  max-width: 40%;
+  height: auto;
+}
+h1 {
+  text-align: center;
+  font-size: 16px; /* Adjust the size here */
+  color: #333;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #f4f4f4;
+  border-bottom: 3px solid #ddd;
+  background-color: var(--nav-background);
+  border-bottom: 3px solid var(--nav-border);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-hover);
+  border-bottom: 5px solid var(--color-hover);
+}
+
+/* Active link styles */
+nav ul li a.active {
+  border-bottom: 5px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Form styles */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+form label,
+form input,
+form textarea,
+form button {
+  font: inherit;
+}
+
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+}
+
+form button[type="submit"] {
+  grid-column: 1 / -1;
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: color-mix(in oklch, var(--color-accent), black 10%);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+  
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Global image styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Projects grid layout */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+/* Projects article styling */
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid; /* Use subgrid for content alignment */
+  grid-row: span 3;
+}
+
+.projects h2 {
+  margin: 0; /* Remove default margin to prevent excessive spacing */
+}
+
+/* Heading styles */
+h1 {
+  font-size: 400%; /* Make the main heading significantly larger */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1; /* Reduce leading to make headings more compact */
+  text-wrap: balance; /* Ensure balanced text wrapping */
+}
+/* Ensure navigation is visible */
+nav {
+  display: block;
+  margin-bottom: 20px;
+}
+/* Keep all your existing CSS, but replace or modify the navigation styles as follows: */
+
+/* Navigation styles */
+nav {
+  background-color: #f4f4f4;
+  border-bottom: 3px solid #ddd;
+  padding: 0 20px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 0;
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-hover);
+  border-bottom: 5px solid var(--color-hover);
+}
+
+/* Active link styles */
+nav a.current {
+  border-bottom: 5px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav a {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #ffffff;
+    --color-hover: #cccccc;
+    --color-background: #333333;
+    --nav-background: #222222;
+    --nav-border: #444444;
+  }
+}
+[data-theme="light"] {
+  --color-text: #333;
+  --color-hover: #666;
+  --color-background: #ffffff;
+  --nav-background: #f4f4f4;
+  --nav-border: #ddd;
+}
+
+[data-theme="dark"] {
+  --color-text: #ffffff;
+  --color-hover: #cccccc;
+  --color-background: #333333;
+  --nav-background: #222222;
+  --nav-border: #444444;
+}
+.theme-switcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  font-size: 0.8rem;
+  background-color: var(--nav-background);
+  color: var(--color-text);
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid var(--nav-border);
+}
+
+/* Ensure the container has a relative positioning context */
+body {
+  position: relative;
+}

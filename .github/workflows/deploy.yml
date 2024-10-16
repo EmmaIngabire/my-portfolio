@@ -20,16 +20,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: build
         env:
-          BASE_PATH: "/${{ github.event.repository.name }}"  # Set the base path for GitHub Pages
+          BASE_PATH: "/${{ github.event.repository.name }}"
         run: |
-          npm run build  # Ensure your build outputs to the correct folder (usually "build")
+          npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "build/"  # Make sure this matches your actual build output path
+          path: "build/"
 
   deploy:
     needs: build_site

@@ -1,3 +1,12 @@
+<script>
+    import projects from '$lib/projects.json';
+</script>
+<pre>{ JSON.stringify(projects, null, "\t") }</pre>
+
+<svelte:head>
+	<title> Projects</title>
+</svelte:head>
+
 <div class="projects">
     <article>
         <a href="https://emmaingabire.github.io/portfolio/" >Assignment 1</a>

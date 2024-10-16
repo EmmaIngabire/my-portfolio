@@ -15,5 +15,5 @@
         <img src="https:/dig.cmu.edu/datavis-fall-2024/labs/2/images/empty.svg" alt="">
         <p>Assumenda voluptatem excepturi veritatis debitis nulla repellat obcaecati officia ipsa amet laboriosam voluptatibus, quod tempore laudantium aut, quasi saepe minima natus. Reprehenderit sit nulla recusandae est doloremque asperiores alias neque.</p>
     </article>
-</each>
+{/each}
 </div>

@@ -18,10 +18,6 @@ eager to leverage my analytical skills to support effective impact monitoring an
     import Project from '$lib/Project.svelte';  // Import the Project component
 </script>
 
-<svelte:head>
-    <title>Home</title>
-</svelte:head>
-
 <h2>Latest Projects</h2> <!-- Add a heading for the section -->
 
 <div class="projects highlights"> <!-- Wrap the projects in a div for styling -->

@@ -22,17 +22,14 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: "/${{ github.event.repository.name }}"
+          BASE_PATH: "/${{ github.event.repository.name }}"  # Set the base path for GitHub Pages
         run: |
-          npm run build
-
-      - name: List build directory
-        run: ls -la build/  # Check if the build directory exists
+          npm run build  # Ensure your build outputs to the correct folder (usually "build")
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "build/"  # Ensure this matches your output directory
+          path: "build/"  # Make sure this matches your actual build output path
 
   deploy:
     needs: build_site

@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main"]  # Adjust if your main branch has a different name
 
 jobs:
   build_site:
@@ -20,16 +20,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: build
+      - name: Build
         env:
-          BASE_PATH: "/${{ github.event.repository.name }}"
+          BASE_PATH: "/${{ github.event.repository.name }}"  # Adjust BASE_PATH if needed
         run: |
           npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "build/"
+          path: "build/"  # Ensure this matches your output directory
 
   deploy:
     needs: build_site

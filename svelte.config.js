@@ -1,15 +1,11 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({
-			// Configure the output directory (you can change this to your desired output)
-			out: 'build'
-		}),
-		// Ensure you include this if using GitHub Pages
+		adapter: adapter({ fallback: '404.html' }),
 		paths: {
-			base: process.env.BASE_PATH || '', // Using the environment variable for base path
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH,
 		},
 	},
 };

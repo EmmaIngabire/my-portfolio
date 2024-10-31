@@ -1,5 +1,8 @@
-<h1> Emma Sylvine Ingabire Ishimirwe </h1><br>
+<svelte:head>
+	<title> Resume</title>
+</svelte:head>
 
+<h1> Emma Sylvine Ingabire Ishimirwe </h1><br>
 <h2> Summary </h2><br>
 <p> I am a data scientist professional with expertise in data collection, analysis, and impact evaluation. My skill set includes geospatial information
 systems (GIS), statistical analysis, and data visualization using tools like Python, R, and Tableau. I have hands-on experience in conducting and 
